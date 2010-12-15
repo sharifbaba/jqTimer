@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>jqTimer Demo page</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jqTimer.js"></script> 
+</head>
+<body>
+	<h1>
+		Simple jqTimer  
+	</h1>
+	<p>
+	</p>
+	<b>Demo</b>
+	<hr>
+	<table>
+		<tr>
+			<th><b>Timestamp</b></th>
+			<th><b>Ticker</b></th>
+		</tr>
+		<tr>
+			<td>12182400</td>
+			<td><span class="jdt" start="12182400">0</span></td>
+		</tr>
+		<tr>
+			<td>32355</td>
+			<td><span class="jdt" start="32355">0</span></td>
+		</tr>
+		<tr>
+			<td>5644</td>
+			<td><span class="jdt" start="5644">0</span></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="text" id="inp_loadtimer"  start="-1">
+				<input type="button" value="start"  onclick="start_timer()">
+			</td>
+			<td><span id="span_loadtimer" start="5644">0</span></td>
+		</tr>
+	</table>
+	 
+	<script type="text/javascript">
+		$('.jdt').jqTimer(function(ele,stime){
+			$(ele).html(stime);	
+		});
+		function start_timer(){
+			var cusTime = $('#inp_loadtimer').val();
+			if(cusTime){
+				$('#span_loadtimer').attr('start',cusTime).jqTimer(function(ele,stime){
+					$(ele).html(stime);	
+				});
+			}
+		}
+		
+	</script>
+</body>
+</html>
