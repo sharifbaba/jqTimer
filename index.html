@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>
-		Simple jqTimer  
+		Simple jqTimer - convert seconds to time string   
 	</h1>
 	<p>
 	</p>
@@ -31,12 +31,34 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="text" id="inp_loadtimer"  start="-1">
-				<input type="button" value="start"  onclick="start_timer()">
+				<input type="text" id="inp_loadtimer"  value="59" start="-1">
+				<input type="button" value="Click me to start"  onclick="start_timer()"> 
 			</td>
 			<td><span id="span_loadtimer" start="5644">0</span></td>
 		</tr>
 	</table>
+	
+	
+	
+	<br> 
+	<h2>Installation</h2>
+	
+	<ol>
+		<li> use  &lt;span class="jdt" start="12182400" &gt; &lt;/span &gt; or any element that has start attribute with timestamp updated</li>
+		<li> use plugin 
+			<code>
+				<br>
+				$('.jdt').jqTimer(function(ele,stime){<br>
+					$(ele).html(stime);	<br>
+				});<br>
+				 
+		 
+		 
+			</code>
+		</li>
+		 
+	</ol>
+	 
 	 
 	<script type="text/javascript">
 		$('.jdt').jqTimer(function(ele,stime){
